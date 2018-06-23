@@ -1,4 +1,4 @@
-package br.com.intelipost.users;
+package br.com.intelipost;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
