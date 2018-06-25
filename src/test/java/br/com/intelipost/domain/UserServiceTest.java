@@ -1,6 +1,5 @@
 package br.com.intelipost.domain;
 
-import br.com.intelipost.infrastructure.jpa.entities.UserEntity;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
