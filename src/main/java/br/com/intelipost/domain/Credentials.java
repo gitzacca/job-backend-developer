@@ -1,18 +1,9 @@
 package br.com.intelipost.domain;
 
-import javax.persistence.*;
-
-@Entity
 public class Credentials {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
-    @Column(nullable = false)
     private String username;
-
-    @Column(nullable = false)
     private String password;
 
     public Credentials(String username, Password password) {

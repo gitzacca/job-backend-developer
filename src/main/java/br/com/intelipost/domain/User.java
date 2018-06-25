@@ -2,17 +2,10 @@ package br.com.intelipost.domain;
 
 import javax.persistence.*;
 
-@Entity
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
     private String email;
 
     public User(String name, Email email) {
