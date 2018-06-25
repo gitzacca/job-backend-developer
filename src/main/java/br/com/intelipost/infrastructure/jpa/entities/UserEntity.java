@@ -1,6 +1,5 @@
 package br.com.intelipost.infrastructure.jpa.entities;
 
-import br.com.intelipost.domain.Email;
 import br.com.intelipost.domain.User;
 
 import javax.persistence.*;
@@ -18,7 +17,7 @@ public class UserEntity {
     @Column(nullable = false)
     private String email;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private CredentialsEntity credentials;
 
     public UserEntity(User user) {
