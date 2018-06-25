@@ -1,16 +1,17 @@
 package br.com.intelipost.domain;
 
-import javax.persistence.*;
 
 public class User {
 
     private Integer id;
     private String name;
     private String email;
+    private Credentials credentials;
 
-    public User(String name, Email email) {
+    public User(String name, Email email, Credentials credentials) {
         this.name = name;
         this.email = email.getValue();
+        this.credentials = credentials;
     }
 
     protected User() {}
@@ -27,4 +28,5 @@ public class User {
         return email;
     }
 
+    public Credentials getCredentials() { return credentials; }
 }

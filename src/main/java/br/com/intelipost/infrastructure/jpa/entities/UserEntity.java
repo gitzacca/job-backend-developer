@@ -1,6 +1,7 @@
-package br.com.intelipost.infrastructure.jpa;
+package br.com.intelipost.infrastructure.jpa.entities;
 
 import br.com.intelipost.domain.Email;
+import br.com.intelipost.domain.User;
 
 import javax.persistence.*;
 
@@ -20,9 +21,10 @@ public class UserEntity {
     @ManyToOne
     private CredentialsEntity credentials;
 
-    public UserEntity(String name, Email email) {
-        this.name = name;
-        this.email = email.getValue();
+    public UserEntity(User user) {
+        this.name = user.getName();
+        this.email = user.getEmail();
+        this.credentials = new CredentialsEntity(user.getCredentials());
     }
 
     protected UserEntity() {}
