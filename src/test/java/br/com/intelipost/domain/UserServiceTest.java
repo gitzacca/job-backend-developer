@@ -23,7 +23,7 @@ public class UserServiceTest {
         //given
         User user = new User("User Test",
                 new Email("test@intelipost.com"),
-                new Credentials("user.intelipost", new Password("intelispost123")));
+                new Credentials("test@intelipost.com", new Password("intelispost123")));
         //when
         userService.save(user);
 
