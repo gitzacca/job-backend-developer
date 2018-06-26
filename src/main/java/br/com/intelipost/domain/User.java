@@ -1,14 +1,19 @@
 package br.com.intelipost.domain;
 
+import org.springframework.data.redis.core.RedisHash;
 
-public class User {
+import java.io.Serializable;
 
-    private Integer id;
+@RedisHash("User")
+public class User implements Serializable {
+
+    private String id;
     private String name;
     private String email;
     private Credentials credentials;
 
     public User(String name, Email email, Credentials credentials) {
+        this.id = "user" + email.getValue();
         this.name = name;
         this.email = email.getValue();
         this.credentials = credentials;
@@ -16,7 +21,7 @@ public class User {
 
     protected User() {}
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
