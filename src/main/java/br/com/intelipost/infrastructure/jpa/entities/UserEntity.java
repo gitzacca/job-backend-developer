@@ -5,6 +5,7 @@ import br.com.intelipost.domain.User;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class UserEntity {
 
     @Id

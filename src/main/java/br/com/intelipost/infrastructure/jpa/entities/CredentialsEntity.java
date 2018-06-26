@@ -6,6 +6,7 @@ import br.com.intelipost.domain.Password;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "credentials")
 public class CredentialsEntity {
 
     @Id
