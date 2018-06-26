@@ -1,4 +1,4 @@
-package br.com.intelipost.infrastructure.dao;
+package br.com.intelipost.domain.exceptions;
 
 public class UserNotFoundException extends RuntimeException {
 

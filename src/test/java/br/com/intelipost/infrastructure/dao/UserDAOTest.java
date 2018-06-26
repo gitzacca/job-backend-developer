@@ -1,6 +1,7 @@
 package br.com.intelipost.infrastructure.dao;
 
 import br.com.intelipost.domain.*;
+import br.com.intelipost.domain.exceptions.UserNotFoundException;
 import br.com.intelipost.infrastructure.jpa.UserDataRepository;
 import br.com.intelipost.infrastructure.jpa.entities.UserEntity;
 import br.com.intelipost.infrastructure.redis.UserCache;
