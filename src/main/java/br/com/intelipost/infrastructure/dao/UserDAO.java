@@ -8,6 +8,8 @@ import br.com.intelipost.infrastructure.jpa.UserDataRepository;
 import br.com.intelipost.infrastructure.jpa.entities.UserEntity;
 import br.com.intelipost.infrastructure.redis.UserCache;
 import br.com.intelipost.infrastructure.redis.UserCacheRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -42,6 +44,12 @@ public class UserDAO implements UserRepository {
         }
 
         throw new UserNotFoundException("Usuário com email: " + email.getValue() + " não encontrado!");
+    }
+
+    @Override
+    public Page<User> findAll(Pageable pageable) {
+        Page<UserCache> listFromCache = userCacheRepository.findAll(pageable);
+        return listFromCache.map(UserCache::toUser);
     }
 
 }

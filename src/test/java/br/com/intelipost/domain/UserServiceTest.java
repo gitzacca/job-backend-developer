@@ -7,6 +7,10 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import java.util.Arrays;
 
 public class UserServiceTest {
 
@@ -56,5 +60,21 @@ public class UserServiceTest {
 
         //when
         userService.findBy(email);
+    }
+
+    @Test
+    public void mustReturnAListOfUsers() {
+        //given
+        Pageable pageable = Pageable.unpaged();
+        Page<User> users = Mockito.mock(Page.class);
+        Mockito.when(users.getContent()).thenReturn(Arrays.asList(new User("User intelipost", new Email("test@intelipost.com"))));
+
+        Mockito.when(userRepository.findAll(pageable)).thenReturn(users);
+
+        //when
+        Page<User> result = userService.findAll(pageable);
+
+        //then
+        Assert.assertEquals(1, result.getContent().size());
     }
 }
