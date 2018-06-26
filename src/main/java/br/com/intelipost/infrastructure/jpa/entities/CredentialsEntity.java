@@ -19,11 +19,6 @@ public class CredentialsEntity {
     @Column(nullable = false)
     private String password;
 
-    public CredentialsEntity(String username, Password password) {
-        this.username = username;
-        this.password = password.getEncodedPassword();
-    }
-
     public CredentialsEntity(Credentials credentials) {
         this.username = credentials.getUsername();
         this.password = credentials.getPassword();

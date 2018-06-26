@@ -1,5 +1,6 @@
 package br.com.intelipost.infrastructure.jpa.entities;
 
+import br.com.intelipost.domain.Email;
 import br.com.intelipost.domain.User;
 
 import javax.persistence.*;
@@ -42,4 +43,8 @@ public class UserEntity {
     }
 
     public CredentialsEntity getCredentials() { return credentials; }
+
+    public User toUser() {
+        return new User(this.name, new Email(this.email));
+    }
 }
