@@ -1,6 +1,7 @@
 package br.com.intelipost.infrastructure.jpa;
 
 import br.com.intelipost.domain.*;
+import br.com.intelipost.infrastructure.dao.UserDAO;
 import br.com.intelipost.infrastructure.jpa.entities.UserEntity;
 import org.junit.Before;
 import org.junit.Test;

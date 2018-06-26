@@ -1,7 +1,8 @@
-package br.com.intelipost.infrastructure.jpa;
+package br.com.intelipost.infrastructure.dao;
 
 import br.com.intelipost.domain.User;
 import br.com.intelipost.domain.UserRepository;
+import br.com.intelipost.infrastructure.jpa.UserDataRepository;
 import br.com.intelipost.infrastructure.jpa.entities.UserEntity;
 import br.com.intelipost.infrastructure.redis.UserCacheRepository;
 import org.springframework.stereotype.Repository;
