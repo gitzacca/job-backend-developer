@@ -19,27 +19,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/user/register")
-    public String registerRender(Model model) {
-        model.addAttribute("userParams", new UserParams());
-        return "/register";
-    }
-
-    @PostMapping("/user/register")
+    @PostMapping("/user")
     public String save(@ModelAttribute(value = "userParams") UserParams userParams, BindingResult errors, Model model) {
-        User user = new User(userParams.getName(),
-                new Email(userParams.getEmail()),
-                new Credentials(userParams.getUsername(),
-                        new Password(userParams.getPassword())));
+        User user = new User(userParams.getName(), new Email(userParams.getEmail()),
+                new Credentials(userParams.getEmail(), new Password(userParams.getPassword())));
         userService.save(user);
         return "/login";
     }
 
-    @PostMapping("/success")
-    public String sucessRender(Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
-        model.addAttribute("username", username);
-        return "/index";
-    }
 }

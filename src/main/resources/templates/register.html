@@ -4,11 +4,9 @@
     <title>Register new user</title>
 </head>
 <body>
-    <form th:action="@{/user/register}" method="post" th:object="${userParams}">
+    <form th:action="@{/user}" method="post" th:object="${userParams}">
         <div><label> Name : <input type="text" th:field="*{name}" /> </label></div>
         <div><label> Email : <input type="text" th:field="*{email}" /> </label></div>
-
-        <div><label> Login : <input type="text" th:field="*{username}" /> </label></div>
         <div><label> Password: <input type="password" th:field="*{password}" /> </label></div>
         <div><input type="submit" value="Save"/></div>
     </form>

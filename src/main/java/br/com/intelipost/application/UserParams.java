@@ -6,7 +6,6 @@ public class UserParams implements Serializable {
 
     private String name;
     private String email;
-    private String username;
     private String password;
 
     public String getName() {
@@ -23,14 +22,6 @@ public class UserParams implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
