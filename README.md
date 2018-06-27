@@ -15,7 +15,9 @@ Dado o problema de performance, partiria para a investigação no banco de dados
  3 ) Com o auxilio de cache e otimização de queries acredito que o problema de leitura seja resolvido, mas se o problema persistir, escalaria o banco de dados. E para escalar o banco, partiria para replicação, com isso o processamento do banco é distribuido em mais servidores, utilizaria o Pgpool-II (http://www.pgpool.net/)
 
 Outro cenário possível seria problema de performance no servidor da aplicação, da mesma forma analisaria throughput, processamento e consumo de memória. Dado que a aplicação está escrita de forma performática (Sem memory-leak), tomaria as seguintes ações:
+
  1 ) Deixaria a aplicação state-less, não guardaria nenhum tipo de status no servidor, geralmente os dados de autenticação são guardadas no servidor, e para mudar essa estratégia utilizaria JWT paar gerar tokens, dessa forma a validação de autorização se faz pelo token gerado pelo JWT, e não mais pelos dados armazenados no servidor.
+
  2 ) Dado que a aplicação é state-less, é possível fazer o deploy da aplicação em mais de uma instância, com isso subiria a aplicação em mais servidores e faria o load balance utilizando https://www.nginx.com/
 
 2) Com base no problema anterior, gostaríamos que você codificasse um novo sistema de login para muitos usuários simultâneos e carregamento da tela inicial. Lembre-se que é um sistema web então teremos conteúdo estático e dinâmico. Leve em consideração também que na empresa existe um outro sistema que também requisitará os dados dos usuários, portanto, este sistema deve expor as informações para este outro sistema de alguma maneira.
