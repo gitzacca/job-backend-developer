@@ -1,7 +1,6 @@
 package br.com.intelipost.infrastructure.jpa.entities;
 
 import br.com.intelipost.domain.Credentials;
-import br.com.intelipost.domain.Password;
 
 import javax.persistence.*;
 
