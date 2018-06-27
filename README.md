@@ -38,7 +38,7 @@ No domínio defino a responsabilidade do repositório, porém a forma que o repo
 Foquei bastante em seguir boas práticas DDD, TDD e deixar claro que estou resolvendo o problema de leitura no banco de dados, por esse motivo optei por utilizar o Redis para otimizar a leitura.
 
 
-##Deploy
+## Deploy
 
 A aplicação foi desenvolvida para que seja iniciada da forma mais simples possível, basta seguir os passos:
 
@@ -57,3 +57,12 @@ A página estará disponível no endereço: `http://localhost:8080/`
 
 Disponibilizei uma API Rest que seria consumida por outro sistema: `http://localhost:8080/users?page=0&size=10`
 
+## Agradecimento
+
+Quero frisar que foi um teste muito interessante, e agradeço a oportunidade de mostrar o meu trabalho!
+
+Estou disponível para esclarecer qualquer dúvida :)
+
+
+zaccabruno@gmail.com
+(11)97160-9350
