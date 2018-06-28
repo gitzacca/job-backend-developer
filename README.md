@@ -51,7 +51,7 @@ A aplicação foi desenvolvida para que seja iniciada da forma mais simples poss
 
 Pronto, o ambiente já está preparado :)
 
-Para executar a aplicação execute o comando: `gradlew bootRun`
+Para executar a aplicação execute o comando: `gradle bootRun` ou execute a classe `UsersApplication.java` pela IDE.
 
 A página estará disponível no endereço: `http://localhost:8080/`
 
